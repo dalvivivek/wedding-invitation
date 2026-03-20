@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   ANUP & PRAJAKTA — WEDDING INVITATION
+   VIVEK & RAJANIGANDHA — WEDDING INVITATION
    Interactive logic: envelope, countdown, petals,
    music, scroll effects, gallery, save-the-date
    ═══════════════════════════════════════════════════ */
@@ -63,7 +63,7 @@
      COUNTDOWN TIMER
      Target: 03 April 2026, 12:35 PM IST
      ══════════════════════════════════════ */
-  const weddingDate = new Date('2026-04-03T12:35:00+05:30');
+  const weddingDate = new Date('2026-05-03T12:35:00+05:30');
 
   const cdDays = document.getElementById('cd-days');
   const cdHours = document.getElementById('cd-hours');
@@ -408,14 +408,14 @@
     const icsContent = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//AnupWedsPrajakta//EN',
+      'PRODID:-//VivekWedsRajanigandha//EN',
       'BEGIN:VEVENT',
-      'DTSTART:20260403T070500Z',
-      'DTEND:20260403T140500Z',
-      'SUMMARY:Anup & Prajakta Wedding Ceremony',
-      'DESCRIPTION:Wedding Ceremony of Anup Arun Kanere & Prajakta Dhananjay Bhosale. Muhurat at 12:35 PM IST.',
-      'LOCATION:Aarya Banquet and Lawns\\, Near Songadya Hotel\\, Kolhapur Gargoti Road\\, Kalamba\\, Kolhapur',
-      'URL:https://maps.app.goo.gl/MzFGAhLFuj94aWv46',
+      'DTSTART:20260503T070500Z',
+      'DTEND:20260503T140500Z',
+      'SUMMARY:Vivek & Rajanigandha Wedding Ceremony',
+      'DESCRIPTION:Wedding Ceremony of Vivek Umesh Dalvi & Rajanigandha Ravindra Patil. Muhurat at 12:35 PM IST.',
+      'LOCATION:Hotel Park Tree, Near Indian Oil Petrol Pump Karveer, Mumbai - Bangalore Express Highway, Kaneriwadi, Kolhapur',
+      'URL:https://maps.app.goo.gl/rgEEqd5tdfeFNLCY9',
       'END:VEVENT',
       'END:VCALENDAR',
     ].join('\r\n');
@@ -424,7 +424,7 @@
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'AnupWedsPrajakta.ics';
+    a.download = 'VivekWedsRajanigandha.ics';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
