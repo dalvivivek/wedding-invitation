@@ -1,261 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vivek & Rajanigandha — Wedding Invitation</title>
-  <meta name="description" content="You are cordially invited to celebrate the wedding of Vivek & Rajanigandha on 3rd May 2026.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vivek & Rajanigandha - Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════
-       FLOATING PETALS CANVAS (behind everything)
-  ═══════════════════════════════════════════ -->
-  <canvas id="petals-canvas"></canvas>
+<!-- ══ HERO ══ -->
+<div class="hero">
 
-  <!-- ═══════════════════════════════════════════
-       MUSIC TOGGLE
-  ═══════════════════════════════════════════ -->
-  <button id="music-toggle" class="music-btn" aria-label="Toggle music">
-    <svg class="music-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M9 18V5l12-2v13"/>
-      <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+  <!-- Top-left botanical illustration -->
+  <svg class="botanical-tl" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Main branch -->
+    <path d="M10 330 Q60 240 90 180 Q120 120 80 60" stroke="#6b7c5c" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Big leaves -->
+    <path d="M80 60 Q30 40 10 10 Q50 30 90 60" fill="#8fa07a" opacity="0.6"/>
+    <path d="M80 60 Q110 20 140 10 Q120 40 90 65" fill="#6b7c5c" opacity="0.55"/>
+    <path d="M90 100 Q50 75 30 55 Q65 80 92 105" fill="#8fa07a" opacity="0.5"/>
+    <path d="M90 100 Q125 70 150 60 Q125 88 93 108" fill="#4a5940" opacity="0.45"/>
+    <path d="M85 145 Q40 130 20 100 Q60 125 88 148" fill="#8fa07a" opacity="0.55"/>
+    <path d="M85 145 Q120 110 148 100 Q120 130 88 152" fill="#6b7c5c" opacity="0.45"/>
+    <path d="M88 180 Q50 175 28 155 Q65 172 90 185" fill="#4a5940" opacity="0.5"/>
+    <path d="M88 185 Q115 155 140 148 Q118 175 90 188" fill="#8fa07a" opacity="0.4"/>
+    <!-- Small berries -->
+    <circle cx="40" cy="100" r="4" fill="#b5633a" opacity="0.6"/>
+    <circle cx="28" cy="112" r="3" fill="#b5633a" opacity="0.5"/>
+    <circle cx="48" cy="92" r="2.5" fill="#d4845a" opacity="0.5"/>
+    <!-- Fern fronds -->
+    <path d="M78 220 Q55 210 42 195 Q30 180 38 170" stroke="#6b7c5c" stroke-width="1.2" fill="none" opacity="0.5"/>
+    <path d="M78 220 Q68 200 72 185" stroke="#8fa07a" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M55 210 Q48 195 52 182" stroke="#6b7c5c" stroke-width="1" fill="none" opacity="0.35"/>
+    <!-- Tiny leaves along fern -->
+    <ellipse cx="50" cy="196" rx="8" ry="3" fill="#8fa07a" opacity="0.4" transform="rotate(-30 50 196)"/>
+    <ellipse cx="42" cy="183" rx="7" ry="2.5" fill="#6b7c5c" opacity="0.35" transform="rotate(-45 42 183)"/>
+    <ellipse cx="70" cy="194" rx="7" ry="2.5" fill="#4a5940" opacity="0.35" transform="rotate(20 70 194)"/>
+    <!-- Extra foliage -->
+    <path d="M88 240 Q65 238 50 225 Q72 235 90 244" fill="#8fa07a" opacity="0.35"/>
+    <path d="M88 240 Q108 225 120 220 Q105 233 90 246" fill="#6b7c5c" opacity="0.3"/>
+    <!-- Wildflower -->
+    <circle cx="62" cy="68" r="5" fill="#c4983a" opacity="0.5"/>
+    <circle cx="62" cy="58" r="3" fill="#e2c068" opacity="0.4"/>
+    <circle cx="70" cy="65" r="3" fill="#c4983a" opacity="0.4"/>
+    <circle cx="55" cy="65" r="3" fill="#e2c068" opacity="0.35"/>
+    <circle cx="62" cy="68" r="2" fill="#8a4220" opacity="0.4"/>
+  </svg>
+
+  <!-- Top-right (mirrored) -->
+  <svg class="botanical-tr" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M250 260 Q200 190 170 140 Q145 100 170 50" stroke="#6b7c5c" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M170 50 Q200 20 230 5 Q200 35 168 55" fill="#6b7c5c" opacity="0.45"/>
+    <path d="M170 50 Q140 15 115 8 Q140 35 168 58" fill="#8fa07a" opacity="0.4"/>
+    <path d="M168 95 Q200 75 220 55 Q192 80 166 100" fill="#4a5940" opacity="0.4"/>
+    <path d="M168 95 Q140 68 120 60 Q142 84 166 102" fill="#8fa07a" opacity="0.38"/>
+    <path d="M172 135 Q205 125 222 105 Q196 128 170 140" fill="#6b7c5c" opacity="0.4"/>
+    <circle cx="200" cy="90" r="4" fill="#b5633a" opacity="0.5"/>
+    <circle cx="212" cy="100" r="3" fill="#d4845a" opacity="0.45"/>
+    <path d="M172 175 Q198 168 210 155" stroke="#8fa07a" stroke-width="1" fill="none" opacity="0.35"/>
+    <ellipse cx="195" cy="164" rx="8" ry="3" fill="#6b7c5c" opacity="0.35" transform="rotate(25 195 164)"/>
+  </svg>
+
+  <!-- Bottom-right botanical -->
+  <svg class="botanical-br" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 330 Q60 240 90 180 Q120 120 80 60" stroke="#6b7c5c" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M80 60 Q30 40 10 10 Q50 30 90 60" fill="#8fa07a" opacity="0.55"/>
+    <path d="M80 60 Q110 20 140 10 Q120 40 90 65" fill="#4a5940" opacity="0.5"/>
+    <path d="M90 100 Q50 75 30 55 Q65 80 92 105" fill="#6b7c5c" opacity="0.45"/>
+    <path d="M90 100 Q125 70 150 60 Q125 88 93 108" fill="#8fa07a" opacity="0.4"/>
+    <path d="M85 145 Q40 130 20 100 Q60 125 88 148" fill="#4a5940" opacity="0.5"/>
+    <path d="M85 145 Q120 110 148 100 Q120 130 88 152" fill="#6b7c5c" opacity="0.42"/>
+    <path d="M88 185 Q50 175 28 155 Q65 172 90 188" fill="#8fa07a" opacity="0.48"/>
+    <path d="M88 185 Q115 155 140 148 Q118 175 90 190" fill="#4a5940" opacity="0.38"/>
+    <circle cx="40" cy="100" r="4" fill="#c4983a" opacity="0.55"/>
+    <circle cx="28" cy="112" r="3" fill="#e2c068" opacity="0.45"/>
+    <ellipse cx="55" cy="58" rx="10" ry="3.5" fill="#6b7c5c" opacity="0.35" transform="rotate(-35 55 58)"/>
+    <ellipse cx="42" cy="72" rx="9" ry="3" fill="#8fa07a" opacity="0.3" transform="rotate(-50 42 72)"/>
+  </svg>
+
+  <!-- Bottom-left -->
+  <svg class="botanical-bl" viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M250 260 Q200 190 170 140 Q145 100 170 50" stroke="#6b7c5c" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M170 50 Q200 20 230 5 Q200 35 168 55" fill="#8fa07a" opacity="0.4"/>
+    <path d="M168 95 Q200 75 220 55 Q192 80 166 100" fill="#6b7c5c" opacity="0.38"/>
+    <path d="M172 135 Q205 125 222 105 Q196 128 170 140" fill="#4a5940" opacity="0.38"/>
+    <circle cx="200" cy="90" r="4" fill="#b5633a" opacity="0.45"/>
+    <ellipse cx="192" cy="62" rx="8" ry="3" fill="#8fa07a" opacity="0.32" transform="rotate(20 192 62)"/>
+  </svg>
+
+  <div class="hero-inner">
+    <p class="hero-label">Together with their families</p>
+    <div class="monogram-ring"><span class="monogram">V & R</span></div>
+    <div class="hero-names"><em>Vivek</em></div>
+    <span class="ampersand">&</span>
+    <div class="hero-names"><em>Rajanigandha</em></div>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-icon">✦</div>
+      <div class="hero-divider-line"></div>
+    </div>
+    <p class="hero-date">Sunday, 3rd May, 2026</p>
+    <p class="hero-tagline">Kolhapur, Maharashtra</p>
+  </div>
+
+
+<!-- ══ COUNTDOWN ══ -->
+<div class="countdown-section">
+  <svg class="countdown-bg-leaf" style="right:-40px;top:-30px;width:320px;height:320px" viewBox="0 0 320 320" fill="none">
+    <path d="M160 10 Q80 80 60 160 Q40 240 160 310 Q280 240 260 160 Q240 80 160 10Z" fill="#f7f2e8"/>
+    <path d="M160 10 L160 310" stroke="#8fa07a" stroke-width="2" opacity="0.5"/>
+    <path d="M160 60 Q120 90 100 120" stroke="#8fa07a" stroke-width="1" opacity="0.4"/>
+    <path d="M160 90 Q200 110 220 140" stroke="#8fa07a" stroke-width="1" opacity="0.4"/>
+    <path d="M160 130 Q115 155 98 185" stroke="#8fa07a" stroke-width="1" opacity="0.35"/>
+    <path d="M160 130 Q205 148 222 178" stroke="#8fa07a" stroke-width="1" opacity="0.35"/>
+  </svg>
+  <div class="countdown-inner">
+    <p class="section-eyebrow">Counting every petal</p>
+    <p class="section-title">Until the Seven Vows</p>
+    <div class="countdown-grid">
+      <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-label">Days</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-label">Hours</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">Minutes</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-label">Seconds</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ EVENTS ══ -->
+<section class="events-section">
+  <p class="section-eyebrow events-eyebrow">Join us in celebration</p>
+  <h2 class="events-title">The Celebrations</h2>
+  <p class="events-subtitle">Joyful celebrations of love & togetherness</p>
+
+  <div class="branch-sep">
+    <div class="branch-sep-line"></div>
+    <svg width="32" height="20" viewBox="0 0 32 20" fill="none">
+      <path d="M16 2 Q8 6 4 12 Q8 8 16 10 Q24 8 28 12 Q24 6 16 2Z" fill="#6b7c5c" opacity="0.5"/>
+      <line x1="16" y1="2" x2="16" y2="18" stroke="#6b7c5c" stroke-width="1.2" opacity="0.4"/>
     </svg>
-    <svg class="music-icon-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none">
-      <path d="M9 18V5l12-2v13"/>
-      <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-      <line x1="1" y1="1" x2="23" y2="23" stroke-width="2"/>
-    </svg>
-  </button>
+    <div class="branch-sep-line"></div>
+  </div>
 
-  <!-- ═══════════════════════════════════════════
-       SCROLL TO TOP
-  ═══════════════════════════════════════════ -->
-  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polyline points="18 15 12 9 6 15"/>
-    </svg>
-  </button>
-
-  <!-- ═══════════════════════════════════════════
-       HERO — ENVELOPE / OPENING CARD
-  ═══════════════════════════════════════════ -->
-  <section id="hero" class="hero-section">
-    <div class="envelope-wrapper" id="envelope">
-      <div class="envelope-bg">
-        <div class="envelope-flap"></div>
-        <div class="envelope-body">
-          <div class="wax-seal">
-            <span>V &amp; R</span>
-          </div>
-          <p class="envelope-label">Tap to Open</p>
-        </div>
-      </div>
-
-      <div class="invitation-card" id="invitation-card">
-        <div class="card-ornament top-ornament">✦</div>
-        <p class="card-subtitle">Together with their families</p>
-        <h1 class="groom-name">Vivek</h1>
-        <div class="ampersand">&amp;</div>
-        <h1 class="bride-name">Rajanigandha</h1>
-        <p class="card-invite-line">request the honour of your presence at their wedding celebration</p>
-        <div class="card-date-line">
-          <span class="card-date">3rd May 2026</span>
-        </div>
-        <div class="card-ornament bottom-ornament">✦</div>
+  <div class="events-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+    <div class="event-card">
+      <div class="event-icon">💍</div>
+      <div class="event-name">Engagement</div>
+      <div class="event-detail">
+        <div class="event-row"><span class="event-row-label">Date</span>02nd May 2026</div>
+        <div class="event-row"><span class="event-row-label">Time</span>5:00 PM onwards</div>
+        <div class="event-row"><span class="event-row-label">Venue</span>Hotel Park Tree, Kolhapur</div>
       </div>
     </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       MAIN CONTENT (revealed after envelope opens)
-  ═══════════════════════════════════════════ -->
-  <main id="main-content" class="main-content hidden">
-
-    <!-- FLORAL DIVIDER SVG (reusable) -->
-
-    <!-- ═══════════════════════════════════
-         COUPLE INTRODUCTION
-    ═══════════════════════════════════ -->
-    <section class="section couple-section" id="couple">
-      <div class="section-inner reveal-on-scroll">
-        <div class="floral-divider">
-          <svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg"><path d="M0 15 Q50 0 100 15 Q150 30 200 15" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="100" cy="15" r="3" fill="#c9a96e"/><circle cx="60" cy="9" r="1.5" fill="#c9a96e" opacity="0.5"/><circle cx="140" cy="21" r="1.5" fill="#c9a96e" opacity="0.5"/></svg>
-        </div>
-        <h2 class="couple-names">
-          <span class="name-groom">Vivek Umesh Dalvi</span>
-          <span class="couple-and">&amp;</span>
-          <span class="name-bride">Rajanigandha Ravindra Patil</span>
-        </h2>
-        <p class="couple-invite-text">Together with their families, they invite you to celebrate their wedding</p>
-        <p class="couple-hashtag">#VivekWedsRajani</p>
-        <div class="floral-divider">
-          <svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg"><path d="M0 15 Q50 30 100 15 Q150 0 200 15" stroke="#c9a96e" stroke-width="1" fill="none"/><circle cx="100" cy="15" r="3" fill="#c9a96e"/><circle cx="60" cy="21" r="1.5" fill="#c9a96e" opacity="0.5"/><circle cx="140" cy="9" r="1.5" fill="#c9a96e" opacity="0.5"/></svg>
-        </div>
+    <div class="event-card">
+      <div class="event-icon">🎶</div>
+      <div class="event-name">Sangeet Night</div>
+      <div class="event-detail">
+        <div class="event-row"><span class="event-row-label">Date</span>02nd May 2026</div>
+        <div class="event-row"><span class="event-row-label">Time</span>7:00 PM onwards</div>
+        <div class="event-row"><span class="event-row-label">Venue</span>Hotel Park Tree, Kolhapur</div>
       </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         COUNTDOWN
-    ═══════════════════════════════════ -->
-    <section class="section countdown-section" id="countdown">
-      <div class="section-inner reveal-on-scroll">
-        <h3 class="section-title">Counting the Moments</h3>
-        <p class="countdown-subtitle">Until the Auspicious Wedding Muhurat</p>
-        <div class="countdown-timer" id="countdown-timer">
-          <div class="countdown-unit glass-card">
-            <span class="countdown-value" id="cd-days">00</span>
-            <span class="countdown-label">Days</span>
-          </div>
-          <div class="countdown-separator">:</div>
-          <div class="countdown-unit glass-card">
-            <span class="countdown-value" id="cd-hours">00</span>
-            <span class="countdown-label">Hours</span>
-          </div>
-          <div class="countdown-separator">:</div>
-          <div class="countdown-unit glass-card">
-            <span class="countdown-value" id="cd-minutes">00</span>
-            <span class="countdown-label">Minutes</span>
-          </div>
-          <div class="countdown-separator">:</div>
-          <div class="countdown-unit glass-card">
-            <span class="countdown-value" id="cd-seconds">00</span>
-            <span class="countdown-label">Seconds</span>
-          </div>
-        </div>
+    </div>
+    <div class="event-card">
+      <div class="event-icon">🌿</div>
+      <div class="event-name">Wedding Ceremony</div>
+      <div class="event-detail">
+        <div class="event-row"><span class="event-row-label">Date</span>03rd May 2026</div>
+        <div class="event-row"><span class="event-row-label">Muhurat</span>12:30 PM</div>
+        <div class="event-row"><span class="event-row-label">Venue</span>Hotel Park Tree, Kolhapur</div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- ═══════════════════════════════════
-         EVENTS
-    ═══════════════════════════════════ -->
-    <section class="section events-section" id="events">
-      <div class="section-inner">
-        <h3 class="section-title reveal-on-scroll">Wedding Celebrations</h3>
 
-        <!-- ENGAGEMENT -->
-        <div class="event-card haldi-card glass-card reveal-on-scroll">
-          <div class="event-icon icon-dance icon-haldi">💍</div>
-          <h4 class="event-name">Engagement Ceremony</h4>
-          <div class="event-details">
-            <p><strong>Date:</strong> 02 May 2026</p>
-            <p><strong>Time:</strong> 05:00 PM onwards</p>
-            <p><strong>Venue:</strong> Hotel Park Tree, Kolhapur</p>
-          </div>
-          <div class="event-decoration haldi-deco"></div>
-        </div>
+<!-- ══ PHOTO STRIP ══ -->
+<div class="photo-strip">
+  <div class="photo-strip-overlay">
+    <p class="photo-strip-quote">"Two souls, one journey — walking hand in hand, always."</p>
+    <p class="photo-strip-byline">Vivek & Rajanigandha · May 2026</p>
+  </div>
+</div>
 
-        <!-- SANGEET -->
-        <div class="event-card sangeet-card glass-card reveal-on-scroll">
-          <div class="event-icon icon-dance icon-sangeet">🎶</div>
-          <h4 class="event-name">Sangeet Night</h4>
-          <div class="event-details">
-            <p><strong>Date:</strong> 02 May 2026</p>
-            <p><strong>Time:</strong> After Engagement Ceremony</p>
-            <p><strong>Venue:</strong> Hotel Park Tree, Kolhapur</p>
-          </div>
-          <div class="event-decoration sangeet-deco">
-            <span class="music-note n1">♪</span>
-            <span class="music-note n2">♫</span>
-            <span class="music-note n3">♪</span>
-          </div>
-        </div>
+<!-- ══ VENUE ══ -->
+<section class="venue-section">
+  <p class="section-eyebrow" style="color:#e2c068;">Find your way to us</p>
+  <h2 class="events-title">Venue</h2>
+  <p class="events-subtitle">Hotel Park Tree - Kolhapur, Maharashtra</p>
 
-        <!-- WEDDING -->
-        <div class="event-card wedding-card glass-card reveal-on-scroll">
-          <div class="event-icon icon-dance icon-wedding">🪷</div>
-          <h4 class="event-name">Wedding Ceremony</h4>
-          <div class="event-details">
-            <p><strong>Date:</strong> 03 May 2026</p>
-            <p><strong>Muhurat:</strong> 12:35 PM</p>
-            <p class="venue-address">
-              <strong>Venue:</strong> Hotel Park Tree, Kolhapur<br>
-              Near Indian Oil Petrol Pump Karveer,<br>
-              Mumbai - Bangalore Express Highway,<br>
-              Kaneriwadi, Kolhapur
-            </p>
-          </div>
-          <a href="https://maps.app.goo.gl/rgEEqd5tdfeFNLCY9" target="_blank" rel="noopener" class="btn btn-location">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            View Location
-          </a>
-        </div>
+  <div class="venue-map-panel">
+
+    <!-- ── Left: Info card ── -->
+    <div class="venue-info-card">
+      <div class="venue-info-name">Hotel Park Tree</div>
+      <div class="venue-info-addr">
+        Kolhapur, Maharashtra,<br>
+        India
       </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         LOCATION / MAP
-    ═══════════════════════════════════ -->
-    <section class="section location-section" id="location">
-      <div class="section-inner reveal-on-scroll">
-        <h3 class="section-title">Find Your Way</h3>
-        <div class="map-container glass-card">
-          <iframe
-            src="https://maps.google.com/maps?q=Hotel+Park+Tree+Kaneriwadi+Kolhapur&output=embed"
-            width="100%" height="350" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Aarya Banquet and Lawns — Wedding Venue">
-          </iframe>
+      <div class="venue-info-rating">
+        <div class="venue-stars">
+          <div class="venue-star"></div>
+          <div class="venue-star"></div>
+          <div class="venue-star"></div>
+          <div class="venue-star"></div>
+          <div class="venue-star" style="background:#fbbc04;clip-path:polygon(50% 0%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)"></div>
         </div>
-        <a href="https://maps.app.goo.gl/rgEEqd5tdfeFNLCY9" target="_blank" rel="noopener" class="btn btn-map-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Open in Google Maps
+        <span class="venue-rating-num">4.2</span>
+        <span class="venue-rating-count">(1,044)</span>
+      </div>
+      <div class="venue-info-actions">
+        <a class="venue-action-btn primary" href="https://maps.app.goo.gl/L4oBiGHsaKzfLkgH9" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+          </svg>
+          Directions
         </a>
       </div>
-    </section>
 
+      <div class="venue-info-divider"></div>
 
-    <!-- ═══════════════════════════════════
-         BLESSINGS
-    ═══════════════════════════════════ -->
-    <section class="section blessings-section" id="blessings">
-      <div class="section-inner reveal-on-scroll">
-        <div class="blessings-card glass-card">
-          <div class="blessings-icon">🙏</div>
-          <h3 class="blessings-title">Your Presence is Our Blessing</h3>
-          <p class="blessings-text">
-            We look forward to celebrating this joyous occasion with you.<br>
-            Your love, laughter, and blessings mean the world to us.
-          </p>
-          <div class="blessings-glow"></div>
+      <div class="venue-info-row">
+        <svg class="venue-info-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <div class="venue-info-row-text">
+          Kolhapur,<br>Maharashtra, India
         </div>
       </div>
-    </section>
 
-    <!-- ═══════════════════════════════════
-         SAVE THE DATE
-    ═══════════════════════════════════ -->
-    <section class="section save-date-section" id="save-date">
-      <div class="section-inner reveal-on-scroll">
-        <button class="btn btn-save-date" id="save-date-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Save the Date
-        </button>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════
-         FOOTER
-    ═══════════════════════════════════ -->
-    <footer class="footer" id="footer">
-      <div class="footer-inner reveal-on-scroll">
-        <p class="footer-text">With love,</p>
-        <p class="footer-names">Vivek &amp; Rajanigandha</p>
-        <p class="footer-hashtag">#VivekWedsRajanigandha</p>
-        <div class="footer-hearts">
-          <span>♥</span><span>♥</span><span>♥</span>
+      <div class="venue-info-row">
+        <svg class="venue-info-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <div class="venue-info-row-text">
+          02–03 May 2026<br>
+          <span style="color:#888;">Engagement · Sangeet · Wedding</span>
         </div>
       </div>
-    </footer>
 
-  </main>
+      <div class="venue-info-row">
+        <svg class="venue-info-row-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        <div class="venue-info-row-text">
+          <a href="https://maps.app.goo.gl/L4oBiGHsaKzfLkgH9" target="_blank">maps.app.goo.gl/eDPSprg...</a>
+        </div>
+      </div>
 
-  <script src="script.js"></script>
+      <div class="venue-google-footer">
+        <div class="venue-google-logo">
+          <span>G</span>oogle Maps
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ── Right: Actual Google Maps embed ── -->
+    <div class="venue-map-iframe">
+      <iframe
+        src="https://maps.google.com/maps?q=Hotel+Park+Tree+Kaneriwadi+Kolhapur&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SAVE THE DATE ══ -->
+<div class="std-section">
+  <div class="std-inner">
+    <!-- Botanical sprig -->
+    <svg width="80" height="50" viewBox="0 0 80 50" fill="none" style="margin-bottom:24px;opacity:0.6">
+      <path d="M40 48 Q38 30 36 18 Q34 8 30 2" stroke="#6b7c5c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <path d="M36 18 Q22 12 14 6 Q28 16 37 22" fill="#6b7c5c" opacity="0.6"/>
+      <path d="M36 18 Q50 10 58 4 Q46 14 38 22" fill="#8fa07a" opacity="0.55"/>
+      <path d="M38 30 Q26 28 18 22 Q30 28 40 34" fill="#4a5940" opacity="0.5"/>
+      <path d="M38 30 Q52 26 60 20 Q48 28 40 34" fill="#6b7c5c" opacity="0.45"/>
+      <circle cx="20" cy="10" r="3" fill="#b5633a" opacity="0.5"/>
+      <circle cx="58" cy="8" r="3" fill="#b5633a" opacity="0.45"/>
+    </svg>
+
+    <p class="std-quote">"Your love, laughter, and blessings<br>are the roots of our joy."</p>
+    <p class="std-names-line">Vivek & Rajanigandha</p>
+
+    <div class="std-card">
+      <div class="std-card-date">03rd May 2026</div>
+      <div class="std-card-day">Sunday</div>
+      <div class="std-card-divider"></div>
+      <div class="std-card-venue">
+        Hotel Park Tree<br>
+        Kolhapur, Maharashtra
+      </div>
+    </div>
+
+    <button class="std-btn" onclick="downloadICS()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="2" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="5" y1="1" x2="5" y2="4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="11" y1="1" x2="11" y2="4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="1" y1="6" x2="15" y2="6" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M8 9.5 L8 13 M6 11 L8 13 L10 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Save the Date
+    </button>
+  </div>
+</div>
+
+</div>
+
+
+<!-- ══ FOOTER ══ -->
+<div class="footer">
+  <svg width="120" height="40" viewBox="0 0 120 40" fill="none" style="margin-bottom:20px;opacity:0.4">
+    <path d="M10 38 Q35 25 60 20 Q85 15 110 22" stroke="#6b7c5c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="30" cy="28" rx="12" ry="4" fill="#8fa07a" opacity="0.7" transform="rotate(-20 30 28)"/>
+    <ellipse cx="55" cy="22" rx="10" ry="4" fill="#6b7c5c" opacity="0.6" transform="rotate(-5 55 22)"/>
+    <ellipse cx="82" cy="19" rx="11" ry="4" fill="#4a5940" opacity="0.65" transform="rotate(15 82 19)"/>
+    <circle cx="44" cy="26" r="3" fill="#b5633a" opacity="0.5"/>
+    <circle cx="72" cy="21" r="2.5" fill="#c4983a" opacity="0.45"/>
+  </svg>
+  <div class="footer-divider"></div>
+  <p class="footer-names">Vivek & Rajanigandha</p>
+  <p class="footer-tag">#VivekWedsRajanigandha · May 2026</p>
+  <div class="footer-divider"></div>
+  <p style="font-family:'EB Garamond',serif;font-size:20px;color:var(--brown-light);font-style:italic;opacity:0.6;">With love & gratitude 🌿</p>
+</div>
+
+
+
+
+<script>
+  // ── Countdown ──
+  const weddingDate = new Date('2026-05-03T00:00:00+05:30');
+  function updateCountdown() {
+    const now = new Date();
+    const diff = weddingDate - now;
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+      return;
+    }
+    const d = Math.floor(diff / 864e5);
+    const h = Math.floor((diff % 864e5) / 36e5);
+    const m = Math.floor((diff % 36e5) / 6e4);
+    const s = Math.floor((diff % 6e4) / 1e3);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+
+  // ── ICS Download ──
+  function downloadICS() {
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Vivek & Rajanigandha Wedding//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:vivek-rajanigandha-wedding-2026@hotelparktree',
+      'DTSTART;TZID=Asia/Kolkata:20260503T000000',
+      'DTEND;TZID=Asia/Kolkata:20260503T235900',
+      'SUMMARY:💍 Vivek & Rajanigandha Wedding',
+      'DESCRIPTION:Join us for the wedding celebration of Vivek & Rajanigandha.\\nHotel Park Tree\\, Kolhapur\\, Maharashtra\\n\\nCelebrations:\\n• Engagement & Sangeet Night — 02nd May\\n• Wedding Ceremony Muhurat — 03rd May 12:30 PM',
+      'LOCATION:Hotel Park Tree\\, Kolhapur\\, Maharashtra',
+      'STATUS:CONFIRMED',
+      'TRANSP:TRANSPARENT',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Vivek-Rajanigandha-Wedding.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // ── Scroll reveal ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.event-card, .venue-frame, .std-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+</script>
+
 </body>
 </html>
