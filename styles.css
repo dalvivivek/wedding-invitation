@@ -524,7 +524,7 @@
   }
   .event-name {
     font-family: 'Jost', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 500;
@@ -539,7 +539,7 @@
   align-items: flex-start;
   gap: 12px;
   font-family: 'Jost', sans-serif;
-  font-size: 11px; /* Slightly larger for readability */
+  font-size: 13px; /* Slightly larger for readability */
   font-weight: 500;
   color: var(--ink); /* Darker color for high contrast on glass */
   line-height: 1.4;
@@ -552,7 +552,7 @@
   color: var(--brown);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 10px;
+  font-size: 11px;
 }
 
   /* ─── VENUE / MAP ─── */
@@ -825,7 +825,18 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 28px rgba(74,89,64,0.35);
   }
+  .std-btn.google:hover {
+    background: #4285f4; /* Google blue color */
+  }
   .std-btn svg { flex-shrink: 0; }
+  
+  @media (max-width: 480px) {
+    .std-btn {
+      padding: 14px 28px;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+  }
 
 
   /* ─── PHOTO STRIP ─── */
@@ -902,4 +913,14 @@
     .events-bottom-row .event-card { flex: 1 1 100%; }
     .photo-strip { min-height: 400px; }
     .photo-strip-quote { font-size: clamp(20px, 6vw, 28px); }
+  }
+
+  /* iOS FIX for background-attachment: fixed bug */
+  @supports (-webkit-touch-callout: none) {
+    .hero::before {
+      background-attachment: scroll !important;
+    }
+    .photo-strip {
+      background-attachment: scroll !important;
+    }
   }
