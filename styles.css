@@ -811,7 +811,7 @@
     align-items: center;
     gap: 10px;
     padding: 16px 40px;
-    background: var(--sage-dark);
+    background: var(--brown);
     color: var(--cream);
     border-radius: 100px;
     font-family: 'Jost', sans-serif;
@@ -825,10 +825,7 @@
   .std-btn:hover {
     background: var(--ink);
     transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(74,89,64,0.35);
-  }
-  .std-btn.google:hover {
-    background: #4285f4; /* Google blue color */
+    box-shadow: 0 8px 28px rgba(92, 61, 46, 0.35); /* Using brown shadow */
   }
   .std-btn svg { flex-shrink: 0; }
   

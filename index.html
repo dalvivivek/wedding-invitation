@@ -91,7 +91,7 @@
 
   <div class="hero-inner">
     <p class="hero-label">Together with their families</p>
-    <div class="monogram-ring"><span class="monogram">V & R</span></div>
+    <img src="file.svg" alt="V & R Monogram" style="width: 300px; height: 300px; margin: 0 auto 32px; display: block; filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(1.05);">
     <div class="hero-names"><em>Vivek</em></div>
     <span class="ampersand">&</span>
     <div class="hero-names"><em>Rajanigandha</em></div>
@@ -367,7 +367,7 @@
     const details = encodeURIComponent('Join us for the wedding celebration of Vivek & Rajanigandha.\n\nCelebrations:\n• Engagement & Sangeet Night — 02nd May\n• Wedding Ceremony Muhurat — 03rd May 12:30 PM');
     const location = encodeURIComponent('Hotel Park Tree, Kolhapur, Maharashtra');
     
-    const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
     window.open(url, '_blank');
   }
 
